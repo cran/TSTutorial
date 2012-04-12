@@ -1,0 +1,69 @@
+
+TURORIAL DE PREVISIONES
+
+
+Previsiones es un laboratorio interactivo para el aprendizage y la obtención
+de previsiones de series temporales a través de la metodología Box-Jenkins.
+
+Para ejecutar la aplicación es necesaria introducir una serie temporal. Además, 
+se ha de indicar qué tipo de usuarios quieres ser, es decir, si quieres trabajar 
+en modo estudiante (Seleccionado por defecto) donde el programa muestra textos 
+de ayuda y sugerencias o en modo experto (F) donde el programa únicamente 
+muestra los resultados obtenidos sin ningún tipo de sugerencia o indicación.
+También se puede indicar si se quiere obtener un informe de la sesión (por
+defecto) o no.
+
+El programa consta de una serie de menús ordenados y cada uno de ellos 
+representa un bloque de la metodología anteriormente mencionada. Los bloques 
+son: Análisis exploratorio, Transformaciones, Identificación de los modelos, 
+Estimación de los modelos, Validación de los modelos, Capacidad de previsión, 
+Tratamiento de atípicos y Previsiones a largo plazo. 
+
+Todos los menús contienen las siguientes partes:
+•  Un previo compuesto por una breve explicación de las acciones que se han de 
+   realizar en ese estado del proceso. Conjuntamente con esa explicación, se 
+   actualizan los “plots” de las series y los modelos creados para tener 
+   constancia de los datos con los que se va a trabajar a continuación. 
+   Finalmente, en el bloque Transformaciones, aparece otro “plot” con una breve 
+   explicación de la teoría en que se basa la metodología utilizada en ese menú.
+•  Un gestor de series o de modelos dependiendo del nivel del proceso en que se 
+   esté. Con ellos se podrá asignar la serie o modelo activos, respectivamente, 
+   como también eliminar los datos con os que no se quiera trabajar.
+•  Un número determinado de opciones específicas para cada menú. Todas ellas 
+   están ordenadas por orden por el que, teóricamente, se ha de ir procediendo.
+•  La opción “Ayuda” contiene una breve explicación de las acciones que 
+   realizan el resto de opciones del menú.
+ 
+
+El plot que aparece en los previos de los menús que contiene el conjunto de 
+series tiene la siguiente leyenda:
+•  Serie: Contiene los nombres de las series.
+•  Varianza: Contiene la varianza de cada serie.
+•  Estac.: Indica si la serie ha sido considerada estacionaria o no.
+•  Lineal: Indica si la serie ha sido linealizada o no. En caso afirmativo 
+   contiene el valor criterio para su linealización y si ha sido con LS o sin.
+
+En el caso del plot del conjunto de modelos su leyenda contiene:
+•  Modelo Arima: Contiene la nomenclatura de los modelos que se han creado.
+•  Int.: Indica si el modelo contiene constante o no.
+•  AIC: Indica el valor del AIC de cada modelo.
+•  Valid.: Indica si el modelo ha sido considerado válido o no.
+•  Est.: Indica si el modelo ha sido considerado estable o no.
+•  EQM: Indica el valor del Error Cuadrático Medio de cada modelo.
+•  Lineal: Indica si la serie con la que ha sido estimado el modelo ha sido 
+   linealizada. En caso afirmativo contiene el valor criterio para su 
+   linealización y si ha sido con LS o sin.
+
+Durante todo el proceso, la aplicación muestra los resultados numéricos y 
+gráficos obtenidos en cada opción y, conjuntamente con estas salidas, el 
+programa realiza sugerencias a partir del análisis de estos resultados (En caso 
+de estar en modo estudiante). De esta forma se indica el camino a seguir, pero 
+cabe recordar que son meramente sugerencias y posiblemente existan caminos 
+alternativos.
+
+Una vez que se finaliza el proceso, se puede obtener un informe con todos los 
+pasos y resultados que se han obtenido durante la sesión (en caso de activar la
+opción). Este informe se guarda en un archivo .pdf en la actual dirección de
+trabajo y se abre automaticamente para su visionado. 
+
+

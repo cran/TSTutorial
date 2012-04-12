@@ -1,0 +1,119 @@
+%\VignetteIndexEntry{Stationary Time Series}
+%\VignetteKeywords{LaTeX,HTML,table}
+%\VignettePackage{TSTutorial}
+
+%**************************************************************************
+\documentclass[a4paper]{article}
+ 
+\usepackage{graphicx}
+\usepackage[colorlinks=true,urlcolor=blue]{hyperref}
+\usepackage{color}
+\usepackage{Sweave}                               
+
+<<echo=FALSE,results=hide>>=
+library(TSTutorial)
+data(AirBcn)
+data(Victimes)
+data(Turismes)
+@ 
+
+\begin{document}
+
+\title{Stationary Time Series}
+\author{Alberto Lopez Moreno}
+\date{
+\texttt{TSTutorial} version \texttt{{1.0}}
+}
+\maketitle
+
+A Time Series is stationary if has the following conditions:
+\begin{enumerate}
+\item Constant $\mu$ (mean)  for all \texttt{t}.
+\item Constant $\sigma$ (variance) for all \texttt{t}.
+\item The autocovariance function between $X_{t_{1}}$ and $X_{t_{2}}$ only depends on the interval $t_{1}$ and $t_{2}$.
+\end{enumerate}
+
+In the following graphic you can observe the typical form of an stationary time series, commonly known as white noise.
+
+\begin{center}
+<<fig=TRUE,echo=FALSE>>=
+series=diff(diff(log(AirBcn),12))
+ts.plot(series,main="Stationary")
+@ 
+\end{center}
+
+Below shows some examples of the different types of series that can exists and that it can be transformed to obtain an stationary series.
+
+\newpage
+\begin{enumerate}
+\item{Nonconstant variance series (Heterocedasticity)}
+
+\begin{center}
+<<fig=TRUE,echo=FALSE>>=
+series=diff(diff(AirBcn,12))/100
+ts.plot(series,main="Nonconstant variance")
+@ 
+\end{center}
+
+\newpage
+\item{Nonconstant mean series (trend)}
+
+\begin{center}
+<<fig=TRUE,echo=FALSE>>=
+series=1:300
+ts.plot(series,main="Nonconstant mean")
+@ 
+\end{center}
+
+\newpage
+\item{Seasonal component series}
+
+\begin{center}
+<<fig=TRUE,echo=FALSE>>=
+series=Turismes
+ts.plot(series,main="Seasonal component")
+@ 
+\end{center}
+
+\newpage
+\item{Nonconstant mean and variance series}
+
+\begin{center}
+<<fig=TRUE,echo=FALSE>>=
+series=(1:300)^2
+ts.plot(series,main="Nonconstant mean and variance")
+@ 
+\end{center}
+
+\newpage
+\item{Nonconstant variance and seasonal component series}
+
+\begin{center}
+<<fig=TRUE,echo=FALSE>>=
+series=Victimes
+ts.plot(series,main="Nonconstant variance and seasonal component")
+@ 
+\end{center}
+
+\newpage
+\item{Nonconstant mean and seasonal component series}
+
+\begin{center}
+<<fig=TRUE,echo=FALSE>>=
+series=log(AirBcn)
+ts.plot(series,main="Nonconstant mean and seasonal component")
+@ 
+\end{center}
+
+\newpage
+\item{Nonconstant mean and variance and seasonal component series}
+
+\begin{center}
+<<fig=TRUE,echo=FALSE>>=
+series=AirBcn
+ts.plot(series,main="Nonconstant mean and variance and seasonal comp.")
+@ 
+\end{center}
+\end{enumerate}
+
+\end{document}
