@@ -699,8 +699,8 @@ atipics=function(men,ls){
 	}
 
 	sfExport("atip","men","ls")
-	suppressMessages(sfLibrary(TSTutorial))
-	paralRes=sfLapply(c(1:21),atip)
+	suppressWarnings(suppressMessages(sfLibrary(TSTutorial)))
+	paralRes=sfLapply(sort(seq(2,4,0.1),decreasing=T),atip)
 	suppressMessages(sfStop())
 	sink()
 	suppressWarnings(sink())

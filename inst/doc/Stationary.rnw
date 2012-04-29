@@ -8,7 +8,9 @@
 \usepackage{graphicx}
 \usepackage[colorlinks=true,urlcolor=blue]{hyperref}
 \usepackage{color}
-\usepackage{Sweave}                               
+\usepackage{Sweave} 
+
+\setkeys{Gin}{width=0.7\textwidth}                         
 
 <<echo=FALSE,results=hide>>=
 library(TSTutorial)
@@ -22,7 +24,7 @@ data(Turismes)
 \title{Stationary Time Series}
 \author{Alberto Lopez Moreno}
 \date{
-\texttt{TSTutorial} version \texttt{{1.0}}
+\texttt{TSTutorial} version \texttt{{1.1}}
 }
 \maketitle
 
@@ -55,7 +57,7 @@ ts.plot(series,main="Nonconstant variance")
 @ 
 \end{center}
 
-\newpage
+
 \item{Nonconstant mean series (trend)}
 
 \begin{center}
@@ -75,7 +77,7 @@ ts.plot(series,main="Seasonal component")
 @ 
 \end{center}
 
-\newpage
+
 \item{Nonconstant mean and variance series}
 
 \begin{center}
@@ -95,7 +97,7 @@ ts.plot(series,main="Nonconstant variance and seasonal component")
 @ 
 \end{center}
 
-\newpage
+
 \item{Nonconstant mean and seasonal component series}
 
 \begin{center}
@@ -106,12 +108,12 @@ ts.plot(series,main="Nonconstant mean and seasonal component")
 \end{center}
 
 \newpage
-\item{Nonconstant mean and variance and seasonal component series}
+\item{Nonconstant mean and variance, and seasonal component series}
 
 \begin{center}
 <<fig=TRUE,echo=FALSE>>=
 series=AirBcn
-ts.plot(series,main="Nonconstant mean and variance and seasonal comp.")
+ts.plot(series,main="Nonconstant mean and variance, and seasonal comp.")
 @ 
 \end{center}
 \end{enumerate}
