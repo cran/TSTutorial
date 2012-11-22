@@ -24,7 +24,7 @@ data(Turismes)
 \title{Stationary Time Series}
 \author{Alberto Lopez Moreno}
 \date{
-\texttt{TSTutorial} version \texttt{{1.1}}
+\texttt{TSTutorial} version \texttt{{1.2.1}}
 }
 \maketitle
 

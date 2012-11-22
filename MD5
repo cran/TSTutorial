@@ -1,4 +1,4 @@
-b0d3425bcf06e0231911de56b4b8b57a *DESCRIPTION
+09266c219aa16696cb07ddadf78efb01 *DESCRIPTION
 f9fc50e06fc04af02384b924916dc616 *NAMESPACE
 ea7bc20fc38773fbab1ca2485115fb1d *R/1atip.r
 2ab0651ba8362bcc0b774f1889fc528f *R/2global.r
@@ -8,15 +8,15 @@ f4329e5d09f256bd0a956809253a0969 *R/5prev.r
 f960d9089b42543d7df754d102a2a447 *data/AirBcn.rda
 83814c18c2975ed4ec5a181ed19f5f00 *data/Turismes.rda
 f5ff872f44e5bcc734e3cfbd1f32d465 *data/Victimes.rda
-cb80e103db0aad2710311c7f14a085bf *inst/doc/Stationary.pdf
-52fcaf002a0df85314620779618122c8 *inst/doc/Stationary.rnw
-070cf5936a11df52c8323ef415d35a3f *inst/doc/Tutorial.pdf
-27e7b97b84fc47b82e9d3f1c3a3b5863 *inst/doc/Tutorial.rnw
+d685f6f07cba496b1b9daf3c69d88182 *inst/doc/Stationary.pdf
+fb88f7e01ef73c5b34cfd0f6f6a85ecb *inst/doc/Stationary.rnw
+38a1fe310ab7586ff82dfac551a9f6dd *inst/doc/Tutorial.pdf
+342096e35e0ef1901c99a58fad619baa *inst/doc/Tutorial.rnw
 8e5c1947f4db41e739b9abeff8d25c43 *inst/english.txt
 38c26af67be1cfd0bc76e18e96971ee9 *inst/test/LatexTest.tex
 de1aeda81e8c8ab6ded25df5ae2dbfab *inst/test/Sweave.sty
 23e80e4e6d36b7539bc7ca0ed92bf0c5 *man/AirBcn.rd
-c525fabd41638f09f715da8c5a0970c6 *man/TSTutorial-package.Rd
-83407f15deb82053047174eaf95e2dd5 *man/TSTutorial.Rd
+2d67dd84b5e849dba6b74a50a1248383 *man/TSTutorial-package.Rd
+81ca032bc2d0919fa2d43fe173261cca *man/TSTutorial.Rd
 d3947b641e2d9d6a8efb697c75708c8b *man/Turismes.rd
 c194318244497c5d5d556550f726c0c3 *man/Victimes.rd

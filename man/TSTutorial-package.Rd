@@ -32,11 +32,11 @@ Time Series Tutorial
 \tabular{ll}{
 Package: \tab TSTutorial\cr
 Type: \tab Package\cr
-Version: \tab 1.0\cr
-Date: \tab 2010-11-13\cr
+Version: \tab 1.2.1\cr
+Date: \tab 2012-11-22\cr
 License: \tab GPL (>= 2)\cr
 LazyLoad: \tab yes\cr
-Depends: \tab methods, grDevices, graphics, stats, tools, snowfall\cr
+Depends: \tab methods, grDevices, graphics, stats, snowfall, MASS\cr
 }
 }
 \section{Overview}{
@@ -50,10 +50,6 @@ Depends: \tab methods, grDevices, graphics, stats, tools, snowfall\cr
 
 \author{
 	Author and maintainer: Alberto Lopez Moreno <bertolomo@gmail.com>\cr
-	Co-author: Josep Anton Sanchez\cr
-}
-\references{
-	references
 }
 
 

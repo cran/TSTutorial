@@ -75,7 +75,6 @@ The \code{contRep} has three options:
 
 \author{
 	Author and maintainer: Alberto Lopez Moreno\cr
-	Co-author: Josep Anton Sanchez\cr
 }
 
 \seealso{
