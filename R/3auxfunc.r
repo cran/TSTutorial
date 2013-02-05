@@ -666,18 +666,10 @@ atipics=function(men,ls){
 	crit=array(data = NA, dim = 21, dimnames = NULL)
 	natip=array(data = NA, dim = 21, dimnames = NULL)
 	aic=array(data = NA, dim = 21, dimnames = NULL)
-	i=4
 
-	if(Sys.info()["sysname"]=="Windows"){
-		cpu=Sys.getenv('NUMBER_OF_PROCESSORS')
-	}else{
-		cpu=parallel::detectCores()
-	}	
+		
 	
-	sink("tstutorialaux.txt")
-	suppressMessages(sfInit( parallel=TRUE, cpus=cpu,type="SOCK"))
-	
-	atip=function(id){
+	results=lapply(sort(seq(2,4,0.1),decreasing=T),function(id){
 		m=getmodelo(men$datos)
 		mod.atip<-outdetec(m@modelo,dif=c(getserie(men$datos,m@ser)@reg,getserie(men$datos,m@ser)@est),crit=id,LS=ls)
 		if(length(mod.atip$atip$Obs)>0){
@@ -696,18 +688,9 @@ atipics=function(men,ls){
 			aic=0
 		}
 		return(list(crit=id,natip=natip,aic=aic))
-	}
+	})
 
-	sfExport("atip","men","ls")
-	suppressWarnings(suppressMessages(sfLibrary(TSTutorial)))
-	paralRes=sfLapply(sort(seq(2,4,0.1),decreasing=T),atip)
-	suppressMessages(sfStop())
-	sink()
-	suppressWarnings(sink())
-	unlink("tstutorialaux.txt")
-	suppressWarnings(unlink("tstutorialaux.txt"))
-
-	aux=unlist(paralRes)
+	aux=unlist(results)
 	crit=aux[which(names(aux)=="crit")]	
 	natip=aux[which(names(aux)=="natip")]
 	aic=aux[which(names(aux)=="aic")]
