@@ -1,4 +1,5 @@
 import(
+	methods,
 	grDevices,
 	graphics,
 	stats,

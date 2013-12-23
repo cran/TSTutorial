@@ -141,7 +141,7 @@ drawser=function(men){
 			dev.set(dev.list()[1])
 			par(mfrow=c(1,1))
 		}else{	
-		  try(ifelse(test=as.logical(Sys.info()["sysname"] == "Windows"),win.graph(),X11()),silent=T)
+		  dev.new()
 		}
 	}else{
 		  men$report["graph"]=nextGraphic(men$report["graph"],paste(tex["plot"][18,"1"],sep=""),T,1,contRep=men$report["contRep"])
@@ -226,7 +226,7 @@ drawmod=function(men){
 			dev.set(dev.list()[2])
 			par(mfrow=c(1,1))
 		}else{
-			try(ifelse(test=as.logical(Sys.info()["sysname"] == "Windows"),win.graph(),X11()),silent=T) 
+			dev.new()
 		}		
 	}else{
 		men$report["graph"]=nextGraphic(men$report["graph"],paste(tex["plot"][19,"1"],sep=""),T,2,contRep=men$report["contRep"])
@@ -563,7 +563,7 @@ drawarma=function(men,psis,pis){
 	nr=long*2
 	nc=2
 	if(!men$report["report"]) {
-		try(ifelse(test=as.logical(Sys.info()["sysname"] == "Windows"),win.graph(),X11()),silent=T) 
+		dev.new()
 	}else{
 		men$report["graph"]=nextGraphic(men$report["graph"],paste(tex["plot"][20,"1"],"\\newline\n\n",sep=""),contRep=men$report["contRep"])
 	}
@@ -761,7 +761,7 @@ atipics=function(men,ls){
 drawatip=function(crit,natip,aic,coef,ls){
 	nr=25
 	nc=4
-	try(ifelse(test=as.logical(Sys.info()["sysname"] == "Windows"),win.graph(),X11()),silent=T)
+	dev.new()
 	oldpar <- make.table(nr, nc)
 	if(ls){
 		draw.title.cell(tex["drawatip"][1,"1"],0,0.5,0.5,4.5,0,0,T,F,1.5)

@@ -119,7 +119,7 @@ ini.1=function(men,...){
 		cat(paste(tex["ini"][7,"1"]," ",round(median(serie),digits=4),tex["ini"][8,"1"]," ",round(min(serie),digits=4)," ",tex["ini"][9,"1"]," ",round(max(serie),digits=4),"\n",sep=""))
 		men$report["desRep"]()
 	}
-	try(ifelse(test=as.logical(Sys.info()["sysname"] == "Windows"),win.graph(),X11()),silent=T)
+	dev.new()
 	par(mfrow=c(2,2))
 	plot(serie)
 	hist(serie)
@@ -136,7 +136,7 @@ ini.1=function(men,...){
 		men$report["desGraph"]()
 		men$report["desRep"]()
 	}
-	try(ifelse(test=as.logical(Sys.info()["sysname"] == "Windows"),win.graph(),X11()),silent=T)
+	dev.new()
 	plot(decompose(serie))
 	if(men$report["report"]){
 		men$report["actRep"]()
@@ -307,7 +307,7 @@ trans.4=function(men,...){
 				men$report["desRep"]()
 			}
 		}
-		try(ifelse(test=as.logical(Sys.info()["sysname"] == "Windows"),win.graph(),X11()),silent=T)	
+		dev.new()
 		ma=boxplot(s@serie~trunc(time(s@serie)))$stats	
 		if(men$report["report"]){
 			men$report["actRep"]()
@@ -318,7 +318,7 @@ trans.4=function(men,...){
 		}
 
 		
-		try(ifelse(test=as.logical(Sys.info()["sysname"] == "Windows"),win.graph(),X11()),silent=T)	
+		dev.new()
 		me=apply(matrix(s@serie[1:(length(s@serie)%/%tsp(s@serie)[3]*tsp(s@serie)[3])],ncol=tsp(s@serie)[3],byrow=T),1,mean)
 		sdv=apply(matrix(s@serie[1:(length(s@serie)%/%tsp(s@serie)[3]*tsp(s@serie)[3])],ncol=tsp(s@serie)[3],byrow=T),1,sd)
 		plot(me,sdv,xlab="Means",ylab="Standard Deviations",main="Plot Mean vs Standard Deviations")
@@ -332,7 +332,7 @@ trans.4=function(men,...){
 			men$report["desRep"]()
 		}
 		
-		try(ifelse(test=as.logical(Sys.info()["sysname"] == "Windows"),win.graph(),X11()),silent=T)	
+		dev.new()
 		suppressWarnings(boxcox(s@serie~1))
 		if(men$report["report"]){
 			men$report["actRep"]()
@@ -418,7 +418,7 @@ trans.5=function(men,...){
 				men$report["desRep"]()
 			}
 		}
-		try(ifelse(test=as.logical(Sys.info()["sysname"] == "Windows"),win.graph(),X11()),silent=T)
+		dev.new()
 		serie=s@serie
 		monthplot(serie)
 		if(men$report["report"]){
@@ -598,7 +598,7 @@ iden.2=function(men,...){
 			men$report["desRep"]()
 		}
 	}
-	try(ifelse(test=as.logical(Sys.info()["sysname"] == "Windows"),win.graph(),X11()),silent=T)	
+	dev.new()
 	if (getserie(men$datos)@est != 0) {
 		par(mfrow=c(2,1))
 		acf(getserie(men$datos)@serie,ylim=c(-1,1),lag.max=72,col=c(2,rep(1,getserie(men$datos)@est-1)),lwd=2,main=getserie(men$datos)@nom)
@@ -1302,7 +1302,7 @@ valid.2=function(men,...){
 			}
 		}
 		#Plot dels residus
-		try(ifelse(test=as.logical(Sys.info()["sysname"] == "Windows"),win.graph(),X11()),silent=T) 
+		dev.new()
 		plot(resid)
 		abline(h=0)
 		abline(h=c(-3*sd(resid),3*sd(resid)),lty=3,col=4)
@@ -1317,7 +1317,7 @@ valid.2=function(men,...){
 		}
 
 		#Plot de normalitat dels residus
-		try(ifelse(test=as.logical(Sys.info()["sysname"] == "Windows"),win.graph(),X11()),silent=T) 		
+		dev.new()	
 		qqnorm(resid)
 		qqline(resid,col=2,lwd=2)
 		if(men$report["report"]){
@@ -1329,7 +1329,7 @@ valid.2=function(men,...){
 			men$report["desRep"]()
 		}
 		
-		try(ifelse(test=as.logical(Sys.info()["sysname"] == "Windows"),win.graph(),X11()),silent=T) 
+		dev.new()
 		x=NULL
 		hist(resid,breaks=15,freq=F)
 		curve(dnorm(x,mean=mean(resid),sd=sd(resid)),col=2,add=T)
@@ -1343,7 +1343,7 @@ valid.2=function(men,...){
 		}
 	
 		#ACF i PACF dels residus
-		try(ifelse(test=as.logical(Sys.info()["sysname"] == "Windows"),win.graph(),X11()),silent=T) 
+		dev.new()
 		par(mfrow=c(2,1))
 		acf(resid,ylim=c(-1,1),lag.max=84,col=c(2,rep(1,s-1)),lwd=3)
 		pacf(resid,ylim=c(-1,1),lag.max=84,col=c(rep(1,s-1),2),lwd=3)
@@ -1358,7 +1358,7 @@ valid.2=function(men,...){
 		}
 	
 		#ACF i PACF dels residus al quadrat
-		try(ifelse(test=as.logical(Sys.info()["sysname"] == "Windows"),win.graph(),X11()),silent=T) 
+		dev.new()
 		par(mfrow=c(2,1))
 		acf(resid^2,ylim=c(-1,1),lag.max=84,col=c(2,rep(1,s-1)),lwd=3)
 		pacf(resid^2,ylim=c(-1,1),lag.max=84,col=c(rep(1,s-1),2),lwd=3)
@@ -1372,7 +1372,7 @@ valid.2=function(men,...){
 			men$report["desRep"]()
 		}
 		#Diagnòstics Ljung-Box
-		try(ifelse(test=as.logical(Sys.info()["sysname"] == "Windows"),win.graph(),X11()),silent=T) 
+		dev.new()
 		par(mar=c(2,2,1,1))
 		tsdiag(model,gof.lag=50)
 		if(men$report["report"]){
@@ -1434,7 +1434,7 @@ valid.3=function(men,...){
 			}
 		}
 		#Comparacio d'ACF mostral i del model estimat
-		try(ifelse(test=as.logical(Sys.info()["sysname"] == "Windows"),win.graph(),X11()),silent=T) 
+		dev.new()
 		par(mfrow=c(2,1))
 		acf(dades, ylim=c(-1,1) ,lag.max=36,main="Mostral")
 		plot(ARMAacf(model$model$phi,model$model$theta,lag.max=36),ylim=c(-1,1), type="h",xlab="Lag",  ylab="", main="Teoric")
@@ -1451,7 +1451,7 @@ valid.3=function(men,...){
 		}
 	
 		#Comparacio de PACF mostral i del model estimat
-		try(ifelse(test=as.logical(Sys.info()["sysname"] == "Windows"),win.graph(),X11()),silent=T) 
+		dev.new()
 		par(mfrow=c(2,1))
 		pacf(dades, ylim=c(-1,1) ,lag.max=36,main="Mostral")
 		plot(ARMAacf(model$model$phi,model$model$theta,lag.max=36, pacf=T),ylim=c(-1,1),type="h", xlab="Lag", ylab="", main="Teoric")
@@ -1867,7 +1867,7 @@ cap.3=function(men,...){
 		}
 		yliml=min(min(orig@serie[(length(orig@serie)*0.5):length(orig@serie)]),min(tl))
 		ylimu=max(max(orig@serie[(length(orig@serie)*0.5):length(orig@serie)])+(max(orig@serie[(length(orig@serie)*0.5):length(orig@serie)])-min(orig@serie[(length(orig@serie)*0.5):length(orig@serie)]))*0.1,max(tu)+(max(orig@serie[(length(orig@serie)*0.5):length(orig@serie)])-min(orig@serie[(length(orig@serie)*0.5):length(orig@serie)]))*0.1)
-		try(ifelse(test=as.logical(Sys.info()["sysname"] == "Windows"),win.graph(),X11()),silent=T)
+		dev.new()
 		ts.plot(orig@serie,tl,tu,pr,lty=c(1,2,2,1),col=c("black","blue","blue","red"),xlim=c(ultim[1]-reser%/%12-1,fin[1]+1),ylim=c(yliml,ylimu),type="o")
 		if(men$report["report"]){
 			men$report["actRep"]()
@@ -2241,7 +2241,7 @@ atip.2=function(men,...){
 					}
 				}
 				nombre=paste(nom,".lin",sep="")
-				try(ifelse(test=as.logical(Sys.info()["sysname"] == "Windows"),win.graph(),X11()),silent=T) 
+				dev.new()
 				plot(serie-ser.lin,main=paste(nom,"-",nombre))
 				if(men$report["report"]){
 					men$report["actRep"]()
@@ -2250,7 +2250,7 @@ atip.2=function(men,...){
 					men$report["desGraph"]()
 					men$report["desRep"]()
 				}
-				try(ifelse(test=as.logical(Sys.info()["sysname"] == "Windows"),win.graph(),X11()),silent=T) 
+				dev.new()
 				plot(serie)
 				lines(ser.lin,col=2)
 				legend((tsp(serie)[2]-tsp(serie)[1])*0.55+tsp(serie)[1],(max(serie)-min(serie))*0.15+min(serie),c(nom,nombre),col=c(1,2),lty=1)
@@ -2463,7 +2463,7 @@ prev.2=function(men,...){
 			pr=ts((pr^(1/s@trans)),start=fin,frequency=tsp(s@serie)[3])
 			tu=ts((tu^(1/s@trans)),start=fin,frequency=tsp(s@serie)[3])
 		}
-		try(ifelse(test=as.logical(Sys.info()["sysname"] == "Windows"),win.graph(),X11()),silent=T) 
+		dev.new()
 		yliml=min(min(orig@serie[(length(orig@serie)*0.5):length(orig@serie)]),min(tl))
 		ylimu=max(max(orig@serie[(length(orig@serie)*0.5):length(orig@serie)])+(max(orig@serie[(length(orig@serie)*0.5):length(orig@serie)])-min(orig@serie[(length(orig@serie)*0.5):length(orig@serie)]))*0.1,max(tu)+(max(orig@serie[(length(orig@serie)*0.5):length(orig@serie)])-min(orig@serie[(length(orig@serie)*0.5):length(orig@serie)]))*0.1)
 		ts.plot(orig@serie,tl,tu,pr,lty=c(1,2,2,1),col=c("black","blue","blue","red"),xlim=c(fin[1]-1,fin[1]+prev%/%12+1),ylim=c(yliml,ylimu),type="o")
