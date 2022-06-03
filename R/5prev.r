@@ -10,7 +10,7 @@
 	if(is.null(contRep$name))	contRep$name="Series"
 
 	
-	if(class(series)!="ts"){
+	if(is.ts(series)){
 		stop("'series' has to be an object of class 'ts'")
 	}else{
 		series=ts(data=as.numeric(unlist(series)),start=attr(series,"tsp")[1],end=attr(series,"tsp")[2],frequency=attr(series,"tsp")[3])

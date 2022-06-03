@@ -32,8 +32,8 @@ Time Series Tutorial
 \tabular{ll}{
 Package: \tab TSTutorial\cr
 Type: \tab Package\cr
-Version: \tab 1.2.1\cr
-Date: \tab 2012-11-22\cr
+Version: \tab 1.2.4\cr
+Date: \tab 2022-06-03\cr
 License: \tab GPL (>= 2)\cr
 LazyLoad: \tab yes\cr
 Depends: \tab methods, grDevices, graphics, stats, snowfall, MASS\cr

@@ -18,7 +18,7 @@ setMethod(
 	f="[",
 	signature=c("menuitem","character","missing","missing"),
 	def = function(x,i,j,drop){
-		switch(EXP=i,
+		switch(EXPR=i,
 			nombre		= return(x@nombre),
 			previo		= return(x@previo),
 			ayuda 		= return(x@ayuda),
@@ -34,7 +34,7 @@ setMethod(
 	f="[<-",
 	signature=c("menuitem","character","missing","ANY"),
 	def = function(x,i,j,value){
-		switch(EXP=i,
+		switch(EXPR=i,
 			nombre		= x@nombre <- value,
 			previo		= x@previo <- value,
 			ayuda 		= x@ayuda <- value,
@@ -60,7 +60,7 @@ setMethod(
 	f="[",
 	signature=c("menu","character","missing","missing"),
 	def = function(x,i,j,drop){
-		switch(EXP=i,
+		switch(EXPR=i,
 			items	= return(x@items)
 		)
 	}
@@ -71,7 +71,7 @@ setMethod(
 	f="[<-",
 	signature=c("menu","character","missing","ANY"),
 	def = function(x,i,j,value){
-		switch(EXP=i,
+		switch(EXPR=i,
 			items = x@items <- value
 		)
 		return(x)
@@ -100,7 +100,7 @@ setMethod(
 	f="[",
 	signature=c("report","character","missing","missing"),
 	def = function(x,i,j,drop){
-		switch(EXP=i,
+		switch(EXPR=i,
 			report		= return(x@report),
 			graph		= return(x@graph),
 			trueVal		= return(x@trueVal),
@@ -119,7 +119,7 @@ setMethod(
 	f="[<-",
 	signature=c("report","character","missing","ANY"),
 	def = function(x,i,j,value){
-		switch(EXP=i,
+		switch(EXPR=i,
 			report		= x@report <- value,
 			graph		= x@graph <- value,
 			trueVal		= x@trueVal <- value,
@@ -147,7 +147,7 @@ setMethod(
 	f="[",
 	signature=c("cami","character","missing","missing"),
 	def = function(x,i,j,drop){
-		switch(EXP=i,
+		switch(EXPR=i,
 			cami	= return(x@cami)
 		)
 	}
@@ -158,7 +158,7 @@ setMethod(
 	f="[<-",
 	signature=c("cami","character","missing","ANY"),
 	def = function(x,i,j,value){
-		switch(EXP=i,
+		switch(EXPR=i,
 			cami	= x@cami <- value,
 			
 		)
@@ -182,7 +182,7 @@ setMethod(
 	f="[",
 	signature=c("lineal","character","missing","missing"),
 	def = function(x,i,j,drop){
-		switch(EXP=i,
+		switch(EXPR=i,
 			crit		= return(x@crit),
 			ls		= return(x@ls),
 			atip 		= return(x@atip)
@@ -195,7 +195,7 @@ setMethod(
 	f="[<-",
 	signature=c("lineal","character","missing","ANY"),
 	def = function(x,i,j,value){
-		switch(EXP=i,
+		switch(EXPR=i,
 			crit		= x@crit <- value,
 			ls		= x@ls <- value,
 			atip 		= x@atip <- value
@@ -226,7 +226,7 @@ setMethod(
 	f="[",
 	signature=c("serie","character","missing","missing"),
 	def = function(x,i,j,drop){
-		switch(EXP=i,
+		switch(EXPR=i,
 			nom		= return(x@nom),
 			serie	= return(x@serie),
 			orig 	= return(x@orig),
@@ -246,7 +246,7 @@ setMethod(
 	f="[<-",
 	signature=c("serie","character","missing","ANY"),
 	def = function(x,i,j,value){
-		switch(EXP=i,
+		switch(EXPR=i,
 			nom		= x@nom <- value,
 			serie	= x@serie <- value,
 			orig 	= x@orig <- value,
@@ -282,7 +282,7 @@ setMethod(
 	f="[",
 	signature=c("modelo","character","missing","missing"),
 	def = function(x,i,j,drop){
-		switch(EXP=i,
+		switch(EXPR=i,
 			modelo	= return(x@modelo),
 			mact	= return(x@mact),
 			ser 	= return(x@ser),
@@ -300,7 +300,7 @@ setMethod(
 	f="[<-",
 	signature=c("modelo","character","missing","ANY"),
 	def = function(x,i,j,value){
-		switch(EXP=i,
+		switch(EXPR=i,
 			modelo	= x@modelo <- value,
 			mact	= x@mact <- value,
 			ser 	= x@ser <- value,
@@ -332,7 +332,7 @@ setMethod(
 	f="[",
 	signature=c("datos","character","missing","missing"),
 	def = function(x,i,j,drop){
-		switch(EXP=i,
+		switch(EXPR=i,
 			lserie	= return(x@lserie),
 			sident	= return(x@sident),
 			lmodelo	= return(x@lmodelo),
@@ -347,7 +347,7 @@ setMethod(
 	f="[<-",
 	signature=c("datos","character","missing","ANY"),
 	def = function(x,i,j,value){
-		switch(EXP=i,
+		switch(EXPR=i,
 			lserie	= x@lserie <- value,
 			sident	= x@sident <- value,
 			lmodelo	= x@lmodelo <- value,
@@ -376,7 +376,7 @@ setMethod(
 	f="[",
 	signature=c("sessio.ts","character","missing","missing"),
 	def = function(x,i,j,drop){
-		switch(EXP=i,
+		switch(EXPR=i,
 			menu		= return(x@menu),
 			cami		= return(x@cami),
 			datos 		= return(x@datos),
@@ -391,7 +391,7 @@ setMethod(
 	f="[<-",
 	signature=c("sessio.ts","character","missing","ANY"),
 	def = function(x,i,j,value){
-		switch(EXP=i,
+		switch(EXPR=i,
 			menu		= x@menu <- value,
 			cami		= x@cami <- value,
 			datos 		= x@ayuda <- value,
@@ -442,7 +442,7 @@ setClass(
 setMethod("[",
 	signature=c("tex","character","missing","missing"),
 	def = function(x,i,j,drop){
-		switch(EXP=i,
+		switch(EXPR=i,
 			menu		= return(x@menu),
 			opciones	= return(x@opciones),
 			previo		= return(x@previo),
@@ -479,7 +479,7 @@ setMethod("[",
 setMethod("[<-",
 	signature=c("tex","character","missing","ANY"),
 	def = function(x,i,j,value){
-		switch(EXP=i,
+		switch(EXPR=i,
 			menu		=x@menu <- value,
 			opciones	= x@opciones <- value,
 			previo		= x@previo <- value,
@@ -1087,13 +1087,13 @@ englishLanguage=function(a){
 	,"Help"
 	,"Exit"
 	,"--opciones.1"
-	,"Exploratory analysis"
+	,"EXPRloratory analysis"
 	,"Transformations"
 	,"Tutorial"
 	,"--opciones.2"
 	,"Series manager"
-	,"Brief explanation of a Stationary Time Series"
-	,"Exploratory analysis"
+	,"Brief EXPRlanation of a Stationary Time Series"
+	,"EXPRloratory analysis"
 	,"Non-constant variance"
 	,"Seasonal component"
 	,"Non-constant mean"
@@ -1168,17 +1168,17 @@ englishLanguage=function(a){
 	,"The objective of the program is to get predictions of the series"
 	,"which starts in"
 	,"and with a period"
-	,". Firstly, it is recommended to make an exploratory analysis to get a previous idea of the series behaviors and properties. Then, the next step is 'Transformations'."
+	,". Firstly, it is recommended to make an EXPRloratory analysis to get a previous idea of the series behaviors and properties. Then, the next step is 'Transformations'."
 	,"To can obtain models to get good predictions, the series has to be stationary (see the vignette 'Stationary' or select the option 2). For this, if it necessary, you have to make certain transformations. Firstly it has to check the uniform of the variance, if it is not uniform, in most cases, it is solved applying logarithm."
 	,"Once we have a stationary series we can identify its possible models. To can do it, you have to look its ACF/PACF plot and, then, introduce the found models."
 	,"Once we have some models, we have to estimate them and, in case it has no significant coefficients, depends on the case, you have to fix these coefficients or modify the models until they have significant all their coefficients."
 	,"When we have significant models, the last step is the validation where we may rule out the invalid models."
 	,"With the obtained valid models you can obtain predictions but it can be some differences between the quality (Reality approximation) in these predictions. Also, these models could not be steady (The same model fitted without the latest observations has coefficients very different). For this, it is recommended analyze the stability and the prediction capacity of the different valid models to then choose the best model and proceed to the 'Atypical Analysis' or to get 'Long-term Predictions'. The advisable number of reservations is one period of the series."
-	,"The atypical treatment allows obtaining the series that would exist if the unexpected events, which have caused changes in the series, hadn't happened. In case to use the atypical treatment, with the obtained series, the program readdress to the menu 'Transformations' to restart (The linearized series maintains the transformation applied to obtain constant variance). For the atypical detection be optimal, it is necessary that the active model was the best model created."
+	,"The atypical treatment allows obtaining the series that would exist if the unEXPRected events, which have caused changes in the series, hadn't happened. In case to use the atypical treatment, with the obtained series, the program readdress to the menu 'Transformations' to restart (The linearized series maintains the transformation applied to obtain constant variance). For the atypical detection be optimal, it is necessary that the active model was the best model created."
 	,"Once you have a good model, you can obtain long-term predictions. Remember that the confident intervals are at 95% of confidence."
 	,"--ayuda.1"
 	,"'Initial' help menu"
-	,"1: The 'Exploratory analysis' option makes a data analysis showing numeric and graphical results."
+	,"1: The 'EXPRloratory analysis' option makes a data analysis showing numeric and graphical results."
 	,"2: The 'Transformations' option readdress to the following menu where you can make transformations to the series for making it a stationary one."
 	,"3: The 'Tutorial' option opens a .pdf file which contains a brief tutorial of TSTutorial."
 	,"--ayuda.2"
@@ -1188,8 +1188,8 @@ englishLanguage=function(a){
 	,"--ayuda.3"
 	,"'Transformations' help menu"
 	,"1: The 'Series manager' option lets to manage the series choosing with which work or delete."
-	,"2: The 'Brief explanation of an Stationary Time Series' option opens a .pdf file which shows with examples how is an stationary series and the different non-stationary series that it could be founded."
-	,"3: The 'Exploratory analysis' option makes a data analysis showing numeric and graphical results."
+	,"2: The 'Brief EXPRlanation of an Stationary Time Series' option opens a .pdf file which shows with examples how is an stationary series and the different non-stationary series that it could be founded."
+	,"3: The 'EXPRloratory analysis' option makes a data analysis showing numeric and graphical results."
 	,"4: The 'Non-constant variance' option shows, through some analysis, whether the series has constant variance and, if it is necessary, you have to indicate what transformation you want to make."
 	,"5: The 'Stationality' option shows whether the series can have seasonal component for, then, make it a seasonal differentiation, in case it was necessary."
 	,"6: The 'Non-constant mean' option shows whether the series has non-constant mean and, if it is necessary, makes a regular differentiation."
@@ -1237,8 +1237,8 @@ englishLanguage=function(a){
 	,"2: The 'Long-term predictions' makes long-term predictions."
 	,"--ini.1"
 	,"It shows the series numeric descriptive; the series plot, its histogram, the qqnorm plot and its ACF; and the descompose plot which shows the series without its seasonal component and trend, the series without its seasonal component, its trend and its remember plot (reordered ACF)."
-	,"EXPLORATORY ANALYSIS OF THE SERIES:"
-	,"Exploratory analysis of the series:"
+	,"EXPRLORATORY ANALYSIS OF THE SERIES:"
+	,"EXPRloratory analysis of the series:"
 	,"General numeric description:"
 	,"The mean of the series is"
 	,"and its standard deviation is"
@@ -1257,7 +1257,7 @@ englishLanguage=function(a){
 	,"The deleted series was the active series, for this reason you have to choose the series with which you want to work."
 	,"You have to have at least 2 series to can choose one to delete."
 	,"--trans.4"
-	,"It shows a plot which contains the boxplots for every period, if you see that the initials are enough different from the final ones, it's very possible that the series doesn't have constant variance. Moreover, it shows a plot with the means vs. the Standard Deviations that if it is a flat line it means that the variance is constant. Finally, it shows a plot with the Box-Cox transformation that indicates the better value of lambda. In case to transform the series, the program will make automatically an exploratory analysis."
+	,"It shows a plot which contains the boxplots for every period, if you see that the initials are enough different from the final ones, it's very possible that the series doesn't have constant variance. Moreover, it shows a plot with the means vs. the Standard Deviations that if it is a flat line it means that the variance is constant. Finally, it shows a plot with the Box-Cox transformation that indicates the better value of lambda. In case to transform the series, the program will make automatically an EXPRloratory analysis."
 	,"Non-constant variance series:"
 	,"SUGGESTION: It is suggested to transform the data."
 	,"SUGGESTION: It seems no necessary transform the data."
@@ -1271,7 +1271,7 @@ englishLanguage=function(a){
 	,"it isn't considered stationary."
 	,"The active series has been transformed yet. Please, select a not transformed series."
 	,"--trans.5"
-	,"As well as helping with the 'Exploratory analysis' monthplot, it also creates a new plot which contain one period with all the observations separated by position of the period that it take up. With it, you can see if it contains different heights is the key of the possible existence of stationary component. In case to want to differentiate the series, the seasonal order is the period of the series."
+	,"As well as helping with the 'EXPRloratory analysis' monthplot, it also creates a new plot which contain one period with all the observations separated by position of the period that it take up. With it, you can see if it contains different heights is the key of the possible existence of stationary component. In case to want to differentiate the series, the seasonal order is the period of the series."
 	,"Series seasonal:"
 	,"Do you want to differentiate?"
 	,"What is the seasonal order of the series?"
@@ -1282,7 +1282,7 @@ englishLanguage=function(a){
 	,"The series has been seasonal differenced before. For R specifications, R can't work with more than one seasonal differentiation."
 	,"You have written a negative number or it is not integer."
 	,"--trans.6"
-	,"You can be helped using the monthplot from 'Exploratory analysis'. If the trend doesn't seems like a horizontal straight line is possible that you have to make a regular differentiation."
+	,"You can be helped using the monthplot from 'EXPRloratory analysis'. If the trend doesn't seems like a horizontal straight line is possible that you have to make a regular differentiation."
 	,"Non-constant mean series:"
 	,"Do you want to differentiate?"
 	,"It is made a regular differentiation to the series."
@@ -1380,7 +1380,7 @@ englishLanguage=function(a){
 	,"Generates 2 plots, the first contains the ACF and the second the PACF."
 	,"You need at least 1 created model to can compare the theoretical ACF/PACF with the sample."
 	,"--valid.4"
-	,"Shows in the console the invertible coefficients and creates a plot that contains the model expressions like AR and MA infinite."
+	,"Shows in the console the invertible coefficients and creates a plot that contains the model EXPRressions like AR and MA infinite."
 	,"Model AR/MA infinites"
 	,"Invertibility coefficients"
 	,"SUGGESTION: The model is invertible."

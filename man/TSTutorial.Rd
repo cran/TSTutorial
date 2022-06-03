@@ -87,6 +87,3 @@ Methods	: \code{\link{TSTutorial}}.\cr
 #TSTutorial(AirBcn)
 
 }
-
-\keyword{ ~kwd1 }
-
