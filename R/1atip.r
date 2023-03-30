@@ -108,7 +108,7 @@ outdetec<-function(object,dif=c(0,0),crit,LS=T){
 }
 
 
-#funció per linealitzar la serie.
+#function to make linear the time series
 
 lineal<-function(serie,atip){
 	m<-length(serie)
