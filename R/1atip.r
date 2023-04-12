@@ -122,3 +122,4 @@ lineal<-function(serie,atip){
 	}
 	return(serie)
 }
+

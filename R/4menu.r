@@ -1371,7 +1371,7 @@ valid.2=function(men,...){
 			men$report["desGraph"]()
 			men$report["desRep"]()
 		}
-		#Diagnòstics Ljung-Box
+		#Diagnostics Ljung-Box
 		dev.new()
 		par(mar=c(2,2,1,1))
 		tsdiag(model,gof.lag=50)
